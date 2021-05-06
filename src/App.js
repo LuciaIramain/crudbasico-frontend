@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Inicio from './components/Inicio';
+import ListaProductos from './components/ListaProductos';
+import AgregarProducto from './components/AgregarProducto';
+// BrowserRouter nos da acceso al historial de paginas que tengo
+// Switch nos sirve para seleccionar entre rutas
+// Route es la ruta
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path='/'><Inicio/></Route>
+        <Route exact path='/productos'><ListaProductos/></Route>
+        <Route exact path='/productos/nuevo'><AgregarProducto/></Route>
+      </Switch>
+    </Router>
   );
 }
 
