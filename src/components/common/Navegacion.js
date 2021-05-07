@@ -4,14 +4,14 @@ import {NavLink} from 'react-router-dom';
 
 const Navegacion = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="secondary" variant="dark" expand="lg">
       <Navbar.Brand href="/">CRUD Basico</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <NavLink exact={true} to='/'>Inicio</NavLink> {/*to es hacia y funciona como href*/}
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
+          <NavLink exact={true} to='/' className="nav-link mx-2">Inicio</NavLink> {/*to es hacia y funciona como href -- exact hay que ponerle el true porque por defecto esta en false*/}
+          <NavLink exact={true} to='/productos' className="nav-link mx-2">Productos</NavLink>
+          <NavLink exact={true} to='/productos/nuevo' className="nav-link mx-2">Agregar producto</NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
