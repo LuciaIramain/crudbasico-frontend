@@ -29,6 +29,24 @@
       "precioProducto": "200",
       "categoriaProducto": "bebida-caliente",
       "id": 5
+    },
+    {
+      "nombreProducto": "medialunas x unidad",
+      "precioProducto": "35",
+      "categoriaProducto": "dulce",
+      "id": 6
+    },
+    {
+      "nombreProducto": "Pebete de jamón y queso",
+      "precioProducto": "150",
+      "categoriaProducto": "salado",
+      "id": 7
+    },
+    {
+      "nombreProducto": "Alfajores",
+      "precioProducto": "70",
+      "categoriaProducto": "dulce",
+      "id": 8
     }
   ]
 }
