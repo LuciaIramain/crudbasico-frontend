@@ -38,8 +38,8 @@ function App() {
       <Navegacion/>
       <Switch>
         <Route exact path='/'><Inicio/></Route>
-        <Route exact path='/productos'><ListaProductos productos={productos}/></Route>
-        <Route exact path='/productos/nuevo'><AgregarProducto/></Route>
+        <Route exact path='/productos'><ListaProductos productos={productos} consultarAPI={consultarAPI}/></Route>
+        <Route exact path='/productos/nuevo'><AgregarProducto consultarAPI={consultarAPI}/></Route>
         <Route exact path='/productos/editar'><EditarProducto/></Route>
       </Switch>
       <Footer/>

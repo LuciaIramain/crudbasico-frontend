@@ -63,6 +63,8 @@ const AgregarProducto = (props) => {
           // setNombreProducto('');
           // setPrecioProducto('');
           // setCategoria('');
+          // Recargar os productos
+            props.consultarAPI();
           // redireccionar a otra ruta -- history es un objeto que tiene metodos para que pueda navegar por las rutas
             props.history.push('/productos');
         }
