@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2';
+import {withRouter} from 'react-router-dom'; //withrouter nos da permiso para usar location, history and match que son propiedades para redireccionar a paginas dentro de mi sitio
 
-const AgregarProducto = () => {
+
+const AgregarProducto = (props) => {
   const URL = process.env.REACT_APP_API_URL;
   console.log(URL);
   const [nombreProducto, setNombreProducto] = useState("");
@@ -58,11 +60,11 @@ const AgregarProducto = () => {
             'success'
           )
           // limpiar el formulario
-          setNombreProducto('');
-          setPrecioProducto('');
-          setCategoria('');
-          // redireccionar a otra ruta
-
+          // setNombreProducto('');
+          // setPrecioProducto('');
+          // setCategoria('');
+          // redireccionar a otra ruta -- history es un objeto que tiene metodos para que pueda navegar por las rutas
+            props.history.push('/productos');
         }
       }catch(error){
         console.log(error);
@@ -149,4 +151,4 @@ const AgregarProducto = () => {
   );
 };
 
-export default AgregarProducto;
+export default withRouter(AgregarProducto); //necesito hacerlo junto con el import

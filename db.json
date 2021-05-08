@@ -59,6 +59,18 @@
       "precioProducto": "75",
       "categoriaProducto": "dulce",
       "id": 10
+    },
+    {
+      "nombreProducto": "Alfajor de maicena x ud",
+      "precioProducto": "65",
+      "categoriaProducto": "dulce",
+      "id": 11
+    },
+    {
+      "nombreProducto": "Tortilla x6 ud",
+      "precioProducto": "100",
+      "categoriaProducto": "salado",
+      "id": 12
     }
   ]
 }
