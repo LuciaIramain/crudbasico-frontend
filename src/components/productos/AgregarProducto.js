@@ -38,6 +38,7 @@ const AgregarProducto = () => {
       console.log(datos);
       // enviar objeto a la api, operacion POST -- try{}catch(){} es una estructura de control
       try{
+        // Cabezera de datos
         const parametros = {
           method: "POST", //cuando mando post, api sabe que voy a enviar un objeto y lo tengo que guardar en algun lugar
           headers: {

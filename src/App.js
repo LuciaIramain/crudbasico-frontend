@@ -7,17 +7,38 @@ import AgregarProducto from './components/productos/AgregarProducto';
 import Navegacion from './components/common/Navegacion';
 import Footer from './components/common/Footer';
 import EditarProducto from './components/productos/EditarProducto';
+import {useState, useEffect} from 'react';
 // BrowserRouter nos da acceso al historial de paginas que tengo
 // Switch nos sirve para seleccionar entre rutas
 // Route es la ruta
 
 function App() {
+  const URL = process.env.REACT_APP_API_URL;
+  const [productos, setProductos] = useState([]);
+
+  // Petición get
+  useEffect(() => {
+    consultarAPI();
+  },[]);
+
+  const consultarAPI = async() => {
+    try{
+      const consulta = await fetch(URL);
+      const respuesta = await consulta.json(); //si digo consulta.json() estraigo la información solo de la consulta
+      console.log(respuesta);
+      setProductos(respuesta);
+    }catch(error){
+      console.log(error);
+    }
+  }
+    
+
   return (
     <Router>
       <Navegacion/>
       <Switch>
         <Route exact path='/'><Inicio/></Route>
-        <Route exact path='/productos'><ListaProductos/></Route>
+        <Route exact path='/productos'><ListaProductos productos={productos}/></Route>
         <Route exact path='/productos/nuevo'><AgregarProducto/></Route>
         <Route exact path='/productos/editar'><EditarProducto/></Route>
       </Switch>

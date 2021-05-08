@@ -47,6 +47,12 @@
       "precioProducto": "70",
       "categoriaProducto": "dulce",
       "id": 8
+    },
+    {
+      "nombreProducto": "Pan x kg ",
+      "precioProducto": "150",
+      "categoriaProducto": "salado",
+      "id": 9
     }
   ]
 }
