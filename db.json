@@ -53,6 +53,12 @@
       "precioProducto": "150",
       "categoriaProducto": "salado",
       "id": 9
+    },
+    {
+      "nombreProducto": "Brownie x porcion",
+      "precioProducto": "75",
+      "categoriaProducto": "dulce",
+      "id": 10
     }
   ]
 }
