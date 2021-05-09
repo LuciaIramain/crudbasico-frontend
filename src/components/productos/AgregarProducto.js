@@ -60,9 +60,9 @@ const AgregarProducto = (props) => {
             'success'
           )
           // limpiar el formulario
-          // setNombreProducto('');
-          // setPrecioProducto('');
-          // setCategoria('');
+          setNombreProducto('');
+          setPrecioProducto('');
+          setCategoria('');
           // Recargar os productos
             props.consultarAPI();
           // redireccionar a otra ruta -- history es un objeto que tiene metodos para que pueda navegar por las rutas
