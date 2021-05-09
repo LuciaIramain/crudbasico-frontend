@@ -1,9 +1,10 @@
 import React, { Fragment, useState, useEffect, useRef } from 'react';
-import { Container, Form, Button, Alert } from "react-bootstrap";
-import {useParams} from 'react-router-dom'; //useParams es un metodo para acceder a todas las rutas que pasea a traves de a url
+import { Container, Form, Button } from "react-bootstrap";
+import {useParams, withRouter} from 'react-router-dom'; //useParams es un metodo para acceder a todas las rutas que pasea a traves de a url
 import {campoRequerido, rangoValor} from '../helpers/validaciones';
+import Swal from 'sweetalert2';
 
-const EditarProducto = () => {
+const EditarProducto = (props) => {
   // obtengo el parametro de la url
   const {id} = useParams() //de este objeto quiero sacar solo la propiedad id
   const URL = process.env.REACT_APP_API_URL;
@@ -61,6 +62,17 @@ const EditarProducto = () => {
           body: JSON.stringify(productoEditado)
         });
         console.log(respuesta);
+
+        if(respuesta.status === 200){
+          Swal.fire(
+            'Producto editado!',
+            'Su producto fue modificado con éxito!',
+            'success'
+          );
+          props.consultarAPI();
+          // redireccionar a la pagina de lista de productos-- history funciona como un arreglo por eso uso push para agregar el elemento al arreglo
+          props.history.push('/productos');
+        }
       }catch(error){
         console.log(error);
         // mostrar al usuario que ocurrio un error
@@ -68,9 +80,6 @@ const EditarProducto = () => {
     }else{
       console.log('mostrar cartel de error');
     }
-
-    
-    
   }
 
   return (
@@ -156,4 +165,4 @@ const EditarProducto = () => {
   );
 };
 
-export default EditarProducto;
+export default withRouter(EditarProducto);

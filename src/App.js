@@ -8,6 +8,9 @@ import Navegacion from './components/common/Navegacion';
 import Footer from './components/common/Footer';
 import EditarProducto from './components/productos/EditarProducto';
 import {useState, useEffect} from 'react';
+import Error404 from './components/Error404';
+
+
 // BrowserRouter nos da acceso al historial de paginas que tengo
 // Switch nos sirve para seleccionar entre rutas
 // Route es la ruta
@@ -40,7 +43,8 @@ function App() {
         <Route exact path='/'><Inicio/></Route>
         <Route exact path='/productos'><ListaProductos productos={productos} consultarAPI={consultarAPI}/></Route>
         <Route exact path='/productos/nuevo'><AgregarProducto consultarAPI={consultarAPI}/></Route>
-        <Route exact path='/productos/editar/:id'><EditarProducto/></Route>
+        <Route exact path='/productos/editar/:id'><EditarProducto consultarAPI={consultarAPI}/></Route>
+        <Route exact path='*'><Error404/></Route>
       </Switch>
       <Footer/>
     </Router>
