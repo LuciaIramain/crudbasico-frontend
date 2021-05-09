@@ -40,7 +40,7 @@ function App() {
         <Route exact path='/'><Inicio/></Route>
         <Route exact path='/productos'><ListaProductos productos={productos} consultarAPI={consultarAPI}/></Route>
         <Route exact path='/productos/nuevo'><AgregarProducto consultarAPI={consultarAPI}/></Route>
-        <Route exact path='/productos/editar'><EditarProducto/></Route>
+        <Route exact path='/productos/editar/:id'><EditarProducto/></Route>
       </Switch>
       <Footer/>
     </Router>

@@ -144,7 +144,7 @@ const AgregarProducto = (props) => {
               inline
             ></Form.Check>
           </section>
-          <Button variant="warning" className="text-light w-100" type="submit">
+          <Button variant="warning" className="text-light w-100 mb-5" type="submit">
             Agregar Producto
           </Button>
         </Form>
