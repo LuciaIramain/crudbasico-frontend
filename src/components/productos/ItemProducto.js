@@ -58,9 +58,9 @@ const ItemProducto = (props) => {
     <ListGroup.Item className="d-flex justify-content-between">
       <p>{props.producto.nombreProducto} <span className="fw-bold fst-italic"> ${props.producto.precioProducto}</span></p>
       <div>
-        <Link to={`/productos/editar/${props.producto.id}`} className="btn btn-warning me-1 text-light">Editar</Link>
+        <Link to={`/productos/editar/${props.producto._id}`} className="btn btn-warning me-1 text-light">Editar</Link>
         {/* <Button variant="warning" className=""></Button> */}
-        <Button variant="danger" onClick={() => eliminarProducto(props.producto.id)}>Eliminar{/* <fontAwesomeIcon icon{faTrashAlt} */}</Button>
+        <Button variant="danger" onClick={() => eliminarProducto(props.producto._id)}>Eliminar{/* <fontAwesomeIcon icon{faTrashAlt} */}</Button>
         {/* en onClick o otro evento, cuando envio la funcion va sin parentesis */}
       </div>
     </ListGroup.Item>

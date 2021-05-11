@@ -10,7 +10,7 @@ const ListaProductos = (props) => {
         <ListGroup>
           {
             // map mapea o recorre todos los elementos del arreglo
-            props.productos.map((producto) => <ItemProducto producto={producto} key={producto.id} consultarAPI={props.consultarAPI}/>)
+            props.productos.map((producto) => <ItemProducto producto={producto} key={producto._id} consultarAPI={props.consultarAPI}/>)
           }
           
         </ListGroup>
